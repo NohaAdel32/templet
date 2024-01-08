@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controller;
-
+use App\Http\Controllers\ExampleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('testHome',[Controller::class, 'home'])->name('home');
-Route::get('contact',[Controller::class, 'contact'])->name('contact');
-Route::get('guard',[Controller::class, 'guard'])->name('guard');
-Route::get('service',[Controller::class, 'service'])->name('service');
-Route::get('about',[Controller::class, 'about'])->name('about');
+Route::get('testHome',[ExampleController::class, 'home'])->name('home');
+Route::get('contact',[ExampleController::class, 'contact'])->name('contact');
+Route::get('guard',[ExampleController::class, 'guard'])->name('guard');
+Route::get('service',[ExampleController::class, 'service'])->name('service');
+Route::get('about',[ExampleController::class, 'about'])->name('about');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

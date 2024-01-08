@@ -4,9 +4,8 @@
 <head>
   @include('includes.head')
 </head>
-
-<body>
-  
+<body >
+<div class="hero_area"> 
   
   @include('includes.header')
     

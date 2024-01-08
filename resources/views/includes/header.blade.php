@@ -1,4 +1,3 @@
-<div class="hero_area">
  <!-- header section strats -->
  <div class="hero_bg_box">
       <div class="img-box">

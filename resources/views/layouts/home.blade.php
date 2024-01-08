@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  
+<div class="hero_area">
   
   @include('includes.header')
     
