@@ -17,9 +17,15 @@ use App\Http\Controllers\ExampleController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){ Route::get('contact',[ExampleController::class, 'contact'])->name('contact');
+    });
 
 Route::get('testHome',[ExampleController::class, 'home'])->name('home');
-Route::get('contact',[ExampleController::class, 'contact'])->name('contact');
+
 Route::get('guard',[ExampleController::class, 'guard'])->name('guard');
 Route::get('service',[ExampleController::class, 'service'])->name('service');
 Route::get('about',[ExampleController::class, 'about'])->name('about');
